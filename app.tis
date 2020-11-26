@@ -1,0 +1,71 @@
+    /*
+    
+    const DEFAULT_WIDTH = 1100dip;
+    const DEFAULT_HEIGHT = 680dip;
+    
+    var (sx,sy,sw,sh) = View.screenBox(0,#workarea,#rectw);
+    
+    var w = self.toPixels(DEFAULT_WIDTH, #width);
+    var h = self.toPixels(DEFAULT_HEIGHT, #height);
+    
+    view.move( sx + (sw - w) / 2, sy + (sh - h) / 2, w,h, true );
+
+  
+    $(.avast-nav).on("click", ".avast-nav-item", function() { 
+      var items = $$(.avast-nav .avast-nav-item); 
+      for( var item in items ) {
+        item.attributes.removeClass("active");
+      }
+      this.attributes.addClass("active");
+   });
+
+    $(#minimize).on("click", function() { 
+      view.state = View.WINDOW_MINIMIZED;
+    });
+
+    $(#close).on("click", function() { 
+      view.close();
+    });
+    
+    */
+
+
+
+
+function self.ready() {
+    
+    var (sx, sy, sw, sh) = View.screenBox(0, #workarea, #rectw);
+
+    view.move( 0, 0, sw, sh, true );
+
+
+    $(select).on("focus", function() { 
+        this.attributes.addClass("select-open");
+    });
+    
+
+    $(select).on("blur change", function() { 
+        this.attributes.removeClass("select-open");
+    });
+
+
+    $(.header).on("click", ".btn", function() { 
+
+        var name = this.attributes["data-name"];
+
+        if (name != "") {
+            switch(name) {
+                case "toggle":  {
+                    $(.container).attributes.toggleClass("content-open");
+
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+        };
+
+    });
+};
+    
