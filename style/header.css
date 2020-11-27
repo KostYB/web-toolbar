@@ -30,6 +30,7 @@
 
 .search-container {
     flow: horizontal;
+    overflow: hidden;
 }
 
 

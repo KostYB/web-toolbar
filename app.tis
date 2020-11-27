@@ -44,6 +44,8 @@ function self.ready() {
             switch(name) {
                 case "toggle":  {
                     $(.container).attributes.toggleClass("content-open");
+                    $(.container).attributes.removeClass("mob-serch-open");
+                    $(#mob-search-btn).attributes.removeClass("active");
                     break;
                 }
                 case "toggleserch":  {
@@ -58,5 +60,6 @@ function self.ready() {
         };
 
     });
+    
 };
     
