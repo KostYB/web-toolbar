@@ -2,25 +2,27 @@
   <head>
       <title>Web-toolbar</title>
       <meta charset="UTF-8">
+      
       <style>
-        @import url(style/variables.css);
         @import url(style/style.css);
-        @import url(style/header.css);
-
       </style>
       
       <script src="app.tis"></script>
       
       
-      
     </head>
   
     <body>
-        <div .container>
+        <main .container .content-open>
            
-            <include src="pages/header.htm" />
+            <include src="pages/header.htm"/>
             
-        </div>
+            <div .content>
+                <include src="pages/services.htm"/>
+            </div>
+            
+            
+        </main>
     </body>
 </html>
 

@@ -1,6 +1,8 @@
 .header {
     background-color: @MAIN_COLOR;
     size: * 40dip;
+    z-index: 10;
+    position: relative;
 }
 .header-wrap {
     margin: 0 -4dip;
@@ -8,7 +10,7 @@
 }
 
 .header-search {
-/*    width: 360dip;*/
+    width: 366dip;
     height: 28dip;
     margin: 6dip 4dip;
     border-radius: 8dip;

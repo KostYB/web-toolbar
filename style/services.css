@@ -1,0 +1,149 @@
+.services {
+    padding-top: 60dip;
+}
+
+.services__title {
+    text-align: center;
+    padding-bottom: 40dip;
+}
+.services__title span{
+    color: rgba(255,255,255,.8);
+    display: block;
+    font-size: 30dip;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.services__list {
+    text-align: center;
+    
+}
+.services__item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 8dip;
+}
+
+
+.service * {
+    box-sizing: border-box;
+}
+.service {
+    size: 160dip;
+    border-radius: 4dip;
+    border: 0;
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    display: block;
+    cursor: pointer;
+    
+}
+.service::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 8dip;
+    left: 0;
+    size: * 160dip;
+    border-radius: 10dip;
+    background-color: rgba(0,0,0,.9);
+    z-index: -1;
+}
+.service::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    size: *;
+    border-radius: 4dip;
+    background-color: #333333;
+    border: 2dip solid transparent;
+    z-index: -1;
+}
+.service:hover {
+    background-color: #383838;
+    transition: background-color @DURATIONS linear;
+}
+.service:hover::after {
+    border-color: @RED_COLOR;
+    transition: border-color @DURATIONS linear;
+}
+
+
+.service:hover .service__animation {
+    fill: @RED_COLOR;
+    transition: fill @DURATIONS linear;
+}
+
+.service:disabled::after {
+    border: 1dip solid rgba(255,255,255,.2);
+}
+
+.service:disabled .service__picture {
+    opacity: 0;
+}
+.service:disabled .service__description {
+    color: rgba(255,255,255,.2);
+}
+
+.service:checked {
+    cursor: default;
+    background-color: #453E3F;
+}
+
+.service:checked::after {
+    border-color: @RED_COLOR;
+}
+.service:checked .service__picture {
+    opacity: 0;
+}
+
+
+.service__line {
+    display: block;
+    height: 26dip;
+}
+.service__picture {
+    position: relative;
+    height: 60dip;
+    margin-bottom: 17dip;
+}
+.service__icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.service__description {
+    color: rgba(255,255,255,.9);
+    font-size: 16dip;
+    font-weight: 500;
+    line-height: 1;
+}
+
+/*
+.service__animation {
+    animation: loading-spinner 1s linear infinite;
+}
+
+
+
+@keyframes loading-spinner {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+*/
+/*
+.service {}
+.service {}
+.service {}*/

@@ -1,0 +1,140 @@
+@font-face {
+    font-family: Roboto;
+    font-weight: 300;
+    src: url("../fonts/Roboto-Light.ttf");
+}
+@font-face {
+    font-family: Roboto;
+    font-weight: 400;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: Roboto;
+    font-weight: 500;
+    src: url("../fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    font-weight: 700;
+    src: url("../fonts/Roboto-Bold.ttf");
+}
+
+
+
+
+body { 
+    font-family: @FONT;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    size: *;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.cp {
+    cursor: pointer;
+}
+
+svg {
+    background-color: transparent;
+}
+
+.btn {
+    display: block;
+    size: 40dip;
+    border: 0;
+    padding: 0;
+    margin: 0 4dip;
+    outline: none;
+    background: transparent;
+    position: relative;
+}
+
+.btn__circle {
+    display: block;
+    size: 32dip;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transform: scale(0);
+}
+.btn:hover .btn__circle {
+    transform: scale(1);
+    background-color: rgba(255,255,255,.2);
+    transition: transform @DURATIONS linear;
+}
+
+.btn.active .btn__circle,
+.btn:active .btn__circle {
+    transition: background-color @DURATIONS linear;
+    background-color: rgba(255,255,255,.8);
+}
+
+
+.btn-icon {
+    size: 40dip;
+    display: block;
+    fill: none;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-icon_white path,
+.btn-icon_white rect {
+    fill: @BTN_COLOR;
+}
+
+.btn-icon_red path,
+.btn-icon_red rect {
+    fill: #d74141;
+}
+
+.btn:hover .btn-icon path,
+.btn:hover .btn-icon rect {
+    transition: fill @DURATIONS linear;
+    fill: #ffffff;
+}
+.btn.active .btn-icon path,
+.btn:active .btn-icon path,
+.btn.active .btn-icon rect,
+.btn:active .btn-icon rect {
+    transition: fill @DURATIONS linear;
+    fill: @MAIN_COLOR;
+}
+
+.rst {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+}
+
+
+.content {
+    background-color: #292929;
+    min-height: 380dip;
+    padding: 0;
+    margin: 0;
+    transform: translate(0, -100%);
+    transition: transform @DURATIONS linear;
+    font-family: @FONT;
+}
+
+
+.content-open .content {
+    transform: translate(0, 0);
+    transition: transform @DURATIONS linear;
+}
+
+
+
+
