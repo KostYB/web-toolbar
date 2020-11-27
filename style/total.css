@@ -72,11 +72,7 @@ svg {
     transition: transform @DURATIONS linear;
 }
 
-.btn.active .btn__circle,
-.btn:active .btn__circle {
-    transition: background-color @DURATIONS linear;
-    background-color: rgba(255,255,255,.8);
-}
+
 
 
 .btn-icon {
@@ -103,11 +99,15 @@ svg {
     fill: #ffffff;
 }
 .btn.active .btn-icon path,
-.btn:active .btn-icon path,
-.btn.active .btn-icon rect,
-.btn:active .btn-icon rect {
+.btn.active .btn-icon rect {
     transition: fill @DURATIONS linear;
     fill: @MAIN_COLOR;
+}
+
+.btn.active .btn__circle {
+    transition: background-color @DURATIONS linear;
+    transform: scale(1);
+    background-color: rgba(255,255,255,.8);
 }
 
 .rst {

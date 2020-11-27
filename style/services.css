@@ -1,5 +1,6 @@
 .services {
     padding-top: 60dip;
+    padding-bottom: 40dip;
 }
 
 .services__title {
@@ -39,7 +40,7 @@
     background: transparent;
     display: block;
     cursor: pointer;
-    
+    margin-bottom: 16dip;
 }
 .service::before {
     content: '';
@@ -78,7 +79,9 @@
     fill: @RED_COLOR;
     transition: fill @DURATIONS linear;
 }
-
+.service:disabled::before {
+    opacity: 0;
+}
 .service:disabled::after {
     border: 1dip solid rgba(255,255,255,.2);
 }

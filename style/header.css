@@ -4,10 +4,20 @@
     z-index: 10;
     position: relative;
 }
-.header-wrap {
+.header__wrap {
     margin: 0 -4dip;
     flow: horizontal;
 }
+.logo {
+    size: 40dip;
+    margin: 0 4dip;
+}
+
+.logo__icon {
+    size: 40dip;
+    display: block;
+}
+
 
 .header-search {
     width: 366dip;
@@ -22,14 +32,7 @@
     flow: horizontal;
 }
 
-.logo {
-    size: 40dip;
-    margin: 0 4dip;
-}
-.logo__icon {
-    size: 40dip;
-    display: block;
-}
+
 
 /* search start */
 
@@ -39,7 +42,7 @@
 }
 .search__input {
     display: block;
-    size: 279dip 28dip;
+    size: * 28dip;
     background: transparent;
     display: block;
     color: rgba(255,255,255,.8);
@@ -47,6 +50,7 @@
     line-height: 28dip;
     padding: 0 40dip 0 8dip;
     caret-color: #fff;
+    box-sizing: border-box;
 }
 
 .search__input:focus {
@@ -85,22 +89,6 @@
     display: block;
     margin: 2dip 4dip;
 }
-
-/*
-
-        select[name=ddcm] option
-      {
-        padding-left:20px;
-      }
-      select[name=ddcm] option:checked
-      {
-        foreground-image:url(stock:checkmark);
-        foreground-repeat:no-repeat;
-        foreground-size:7px;
-        foreground-position:8px 50%;
-      }*/
-
-
 
 
 .header-select__content {
@@ -160,9 +148,22 @@
     border-top-left-radius: 4dip;
 }
 
+.header-select__content.select-open caption .btn-icon {
+    opacity: 1;
+}
+
+
 .header-select option:active,
 .header-select option:checked {
     background: rgba(255,255,255,.1);
+}
+
+
+.select-icon .btn-icon {
+    opacity: 0.6;
+}
+.select-icon option:checked .btn-icon {
+    opacity: 1;
 }
 
 .header-select button {
@@ -212,12 +213,16 @@
     font-family: @FONT;
     color: rgba(255,255,255,.7) !important;
     font-weight: 400 !important;
+    padding-left: 8dip;
 }
 
-.select-icon caption .item__icon {
+.select-icon_remove-icon caption .item__icon {
     display: none !important;
 }
 
+.select-icon_remove-text caption .item__label {
+    display: none !important;
+}
 .header-select__btn {
     position: fixed;
     top: 0;
@@ -234,12 +239,25 @@
     margin-top: 2dip;
 }
 
+#mob-servises {
+    width: 74dip;
+}
+#mob-servises popup {
+    min-width: 160dip;
+    popup-position: top-right bottom-right;
+    margin-top: 2dip;
+}
+
 
 /* toolbar start */
 
 .toolbar {
     flow: horizontal;
     margin-left: auto;
+}
+
+.toolbar__wrap {
+    flow: horizontal;
 }
 
 .toolbar .vertical-line {
@@ -262,5 +280,7 @@
 .content-open .toolbar-toggle-content__show {
     opacity: 1;
 }
+
+
 
 /* toolbar end */

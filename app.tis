@@ -1,17 +1,37 @@
 
 function self.ready() {
     
-    var (sx, sy, sw, sh) = View.screenBox(0, #workarea, #rectw);
+//    var (sx, sy, sw, sh) = View.screenBox(0, #workarea, #rectw);
+//
+//    view.move( 0, 0, sw, sh, false );
 
-    view.move( 0, 0, sw, sh, false );
+// update media vars
+    
+        
+    var wsFactor = "large";
+  
+    view.on("size", function() {
+      
+      var (w,h) = view.box(#dimension);
+      var t = "large";
+        
+      if( w < 1000 ) t = "small";
+//      else if( w < 1000 ) t = "medium";
+        
+      if( t != wsFactor ) {
+        wsFactor = t;
+        view.mediaVars { window-factor : t };
+      }
+      
+    });
 
-
-    $(select).on("focus", function() { 
+    
+    $(.header).on("focus", "select", function() { 
         this.attributes.addClass("select-open");
     });
     
 
-    $(select).on("blur change", function() { 
+    $(.header).on("blur change", "select", function() { 
         this.attributes.removeClass("select-open");
     });
 
@@ -24,7 +44,11 @@ function self.ready() {
             switch(name) {
                 case "toggle":  {
                     $(.container).attributes.toggleClass("content-open");
-
+                    break;
+                }
+                case "toggleserch":  {
+                    $(.container).attributes.toggleClass("mob-serch-open");
+                    this.attributes.toggleClass("active");
                     break;
                 }
                 default: {
