@@ -14,7 +14,7 @@
     </div>
     <div .toolbar__wrap>
         <div .toolbar__item>
-            <button .btn>
+            <button .btn data-service="convert">
                 <span .btn__circle></span>
                 <svg .btn-icon .btn-icon_white xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
                     <g transform="translate(-1525)">
@@ -26,7 +26,7 @@
             </button>
         </div>
         <div .toolbar__item>
-            <button .btn>
+            <button .btn data-service="merge">
                 <span .btn__circle></span>
                 <svg .btn-icon .btn-icon_white xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
                     <g transform="translate(9 8)">
@@ -38,7 +38,7 @@
             </button>
         </div>
         <div .toolbar__item>
-            <button .btn>
+            <button .btn data-service="split">
                 <span .btn__circle></span>
                 <svg .btn-icon .btn-icon_white xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
                     <g transform="translate(8 8)">
@@ -50,7 +50,7 @@
             </button>
         </div>
         <div .toolbar__item>
-            <button .btn>
+            <button .btn data-service="compress" checked>
                 <span .btn__circle></span>
                 <svg .btn-icon .btn-icon_white xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
                     <g transform="translate(8 8)">
@@ -103,7 +103,7 @@
 
             <select #mob-servises .header-select__content .select-icon .select-icon_remove-text>
                 <div .header-select__popup>
-                    <option checked>
+                    <option value=convert checked>
                         <div .item>
                            <div .item__icon>
                                <img src="img/convert.svg" alt="" .btn-icon>
@@ -111,7 +111,7 @@
                            <div .item__label>Convert</div>
                         </div>
                     </option>
-                    <option>
+                    <option value=merge>
                         <div .item>
                            <div .item__icon>
                                <img src="img/merge.svg" alt="" .btn-icon>
@@ -119,7 +119,7 @@
                            <div .item__label>Merge</div>
                         </div>
                     </option>
-                    <option>
+                    <option value=split>
                         <div .item>
                            <div .item__icon>
                                <img src="img/split.svg" alt="" .btn-icon>
@@ -127,7 +127,7 @@
                            <div .item__label>Split</div>
                         </div>
                     </option>
-                    <option>
+                    <option value=compress>
                         <div .item>
                            <div .item__icon>
                                <img src="img/compress.svg" alt="" .btn-icon>

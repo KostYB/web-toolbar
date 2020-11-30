@@ -3,3 +3,7 @@
 @const RED_COLOR: #D73E3E;
 @const DURATIONS: 250ms;
 @const FONT: Roboto, sans-serif;
+@mixin TRANSITION(property) {
+    transition: property @DURATIONS linear;
+};
+

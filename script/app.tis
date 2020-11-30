@@ -1,0 +1,124 @@
+include "tabs.tis";
+
+function self.ready() {
+    
+//    var (sx, sy, sw, sh) = View.screenBox(0, #workarea, #rectw);
+//
+//    view.move( 0, 0, sw, sh, false );
+
+// update media vars
+    
+        
+    var wsFactor = "large";
+  
+    view.on("size", function() {
+      
+      var (w,h) = view.box(#dimension);
+      var t = "large";
+        
+      if( w < 1000 ) t = "small";
+//      else if( w < 1000 ) t = "medium";
+        
+      if( t != wsFactor ) {
+        wsFactor = t;
+        view.mediaVars { window-factor : t };
+      }
+      
+    });
+
+    
+    $(.header).on("focus", "select", function() { 
+        this.attributes.addClass("select-open");
+    });
+    
+
+    $(.header).on("blur change", "select", function() { 
+        this.attributes.removeClass("select-open");
+    });
+
+
+    $(.header).on("click", ".btn", function() { 
+
+        var name = this.attributes["data-name"];
+
+        if (name != "") {
+            switch(name) {
+                case "toggle":  {
+                    $(.container).attributes.toggleClass("content-open");
+                    $(.container.content-open).attributes.removeClass("mob-serch-open");
+                    $(.content-open #mob-search-btn).attributes.removeClass("active");
+                    break;
+                }
+                case "toggleserch":  {
+                    $(.container.content-open).attributes.toggleClass("mob-serch-open");
+                    this.attributes.toggleClass("active");
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+        };
+
+    });
+    
+    
+    // tabs serveces start
+    
+    self.subscribe("statechange", "tabs", function() { 
+       $(#mob-servises).value = this.current; 
+    });
+        
+    self.subscribe("click change", "#mob-servises", function() {
+        $(.container).attributes.addClass("content-open services-show");
+        $(tabs).current = this.value; 
+    })
+                                                         
+                                                      
+    self.on("click", "[data-service]", function(evt) {
+        $(.container).attributes.addClass("content-open");
+        var serviceName = this.attributes["data-service"];
+        
+        var items = $$(.header .btn[data-service]); 
+        
+        for( var item in items ) {
+            item.attributes.removeClass("active");
+            
+            if (item.attributes["data-service"] == serviceName) {
+                item.attributes.addClass("active");
+            }
+        }
+        
+        $(tabs).current = serviceName; 
+        $(#mob-servises).value = serviceName;
+        $(.container).attributes.addClass("services-show");
+    });     
+    
+    //    view.msgbox('sdfsd', serviceName)
+
+    // tabs serveces end
+        
+    // select file start
+        
+    self.on("click", "[data-selectfile]", function(evt) {  
+        var svContent = this.$p(.sv-content);
+        var selectFileNameElement = this.$(.js-selectfile-name);
+        
+        if (svContent.attributes.hasClass("active")) {
+            selectFileNameElement.text = "";
+//            this.attributes.removeClass("active");
+            svContent.attributes.removeClass("active");
+        } else {
+            var fn = view.selectFile(#open,
+            "HTML Files (*.htm,*.html)|*.HTM;*.HTML|All Files (*.*)|*.*" , "html" );
+            if( fn ) {
+                var parse = URL.parse(fn);
+                selectFileNameElement.text = parse.name_ext;
+//                this.attributes.addClass("active");
+                svContent.attributes.addClass("active");
+            }
+        };
+    });
+    // select file end
+};
+    

@@ -129,24 +129,232 @@
     line-height: 1;
 }
 
-/*
-.service__animation {
-    animation: loading-spinner 1s linear infinite;
+
+
+
+.sv {
+    display: none;
+    padding-top: 16dip;
+    size: *;
+    box-sizing: border-box;
+}
+.services-show .services {
+    display: none;
+}
+
+.services-show .sv {
+    display: block;
 }
 
 
+/* tabs start */
 
-@keyframes loading-spinner {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(360deg);
-	}
+tabs {
+  prototype: Tabs url(../script/tabs.tis);
+  size: *;
+  display: block;
+  flow: vertical;
 }
-*/
-/*
-.service {}
-.service {}
-.service {}*/
+
+tabs > div.strip {
+    width: *;
+    flow: horizontal-wrap;
+    horizontal-align: center;
+    padding-bottom: 8px;
+}
+
+tabs > div.strip > label {
+    color: rgba(255,255,255,.6);
+    display: block;
+    width: 160dip;
+    height: 40dip;
+    border-radius: 8dip;
+    margin: 8dip;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    /* max-width: auto;  not wider than max-intrinsic  */
+}
+tabs > div.strip > label:hover {
+    color: #fff;
+    transition: background-color @DURATIONS linear;
+    background-color: rgba(255,255,255,.2);
+}
+tabs > div.strip > label span {
+    font-size: 16dip;
+    font-weight: 400;
+    line-height: 40dip;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+tabs > div.strip > label:current {
+    color: #fff;
+}
+tabs > div.strip > label span::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -5dip;
+    border-radius: 2dip;
+    background-color: transparent;
+}
+tabs > div.strip > label:current span::before {
+    background-color: @RED_COLOR;
+}
+
+
+tabs > [name] { display:none; }
+
+tabs > [name]:expanded { 
+    color: #fff;
+    display:block; 
+    height:*;
+}
+
+
+/* tabs end */
+
+.sv-content__wrap {
+    flow: horizontal;
+    horizontal-align: center; 
+}
+
+.sv-btn-wrap {
+    width: 176dip;
+    position: relative;
+}
+.sv-btn {
+/*    height: 182dip;*/
+    height: *;
+    padding: 5dip;
+    margin: 0 14dip;
+    outline: none;
+    border: 0;
+    box-sizing: border-box;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+    z-index: 2;
+}
+
+.sv-btn__content {
+    box-sizing: border-box;
+    border: 2dip solid rgba(255,255,255,.6);
+    position: relative;
+    size: 136dip 172dip;
+}
+.sv-btn__icon {
+    size: 40dip;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sv-btn__plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image: url("../img/plus.svg");
+    opacity: .6;
+}
+
+.sv-btn__link {
+    position: absolute;
+    bottom: 7dip;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-image: url("../img/link.svg");
+    opacity: 0;
+}
+.sv-btn__delete {
+    position: absolute;
+    top: -5dip;
+    right: -20dip;
+    size: 40dip;
+    transform: scale(0);
+}
+
+.sv-btn__delete svg {
+    size: 40dip;
+    display: block;
+}
+
+.sv-btn__delete-ellipse {
+    fill: #121212;
+    fill-opacity: .6;
+}
+
+.sv-btn__delete-icon {
+    fill: #ffffff;
+    fill-opacity: .6;
+}
+.sv-btn__delete:hover .sv-btn__delete-ellipse,
+.sv-btn__delete:hover .sv-btn__delete-icon {
+    fill-opacity: 1;
+    @TRANSITION(fill-opacity); 
+}
+
+
+.sv-content:not(.active) .sv-btn:hover  {
+    background-color: rgba(255,255,255,.1);
+    @TRANSITION(background-color); 
+}
+
+.sv-btn:hover .sv-btn__content {
+    border-color: #fff;
+    @TRANSITION(border-color);
+}
+.sv-btn:hover .sv-btn__link {
+    opacity: 1;
+    @TRANSITION(opacity);
+}
+.sv-btn:hover .sv-btn__plus {
+    opacity: 1;
+    @TRANSITION(opacity);
+}
+
+.sv-btn__name {
+    text-align: center;
+    color: rgba(255,255,255,.6);
+    font-size: 14dip;
+    font-weight: 400;
+    line-height: 1.24;
+    overflow: hidden;
+    display: none;
+}
+.sv-btn__name span {
+    display: block;
+}
+
+.sv-content.active .sv-btn__content {
+    background-color: #fff;
+}
+.sv-content.active .sv-btn__name {
+    display: block;
+}
+
+.sv-content.active .sv-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,.1);
+    opacity: 0;
+    z-index: -1;
+}
+.sv-content.active .sv-btn:hover::before {
+    @TRANSITION(opacity); 
+    opacity: 1;
+}
+
+.sv-content.active .sv-btn:hover .sv-btn__delete {
+    transform: scale(1);
+    @TRANSITION(transform); 
+}
+

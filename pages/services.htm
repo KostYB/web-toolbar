@@ -71,3 +71,66 @@
         </div>
     </div>
 </div>
+
+
+<div .sv>
+   
+    <div sv__wrap>
+        <tabs>
+            <div .strip>
+              <label data-service=convert>
+                  <span>Convert</span>
+              </label>
+              <label data-service=merge >
+                  <span>Merge</span>
+              </label>
+              <label data-service=split >
+                  <span>Split</span>
+              </label>
+              <label data-service=compress >
+                  <span>Compress</span>
+                  
+              </label>
+            </div>
+            <section (convert) expanded .sv-content .convert>
+                <div .sv-content__wrap>
+                    <div .sv-btn-wrap>
+                       <button .sv-btn data-selectfile>
+                            <div .sv-btn__content>
+                                <div .sv-btn__delete .sv-btn__icon></div>
+                                <div .sv-btn__plus .sv-btn__icon></div>
+                                <div .sv-btn__link .sv-btn__icon></div>
+                                
+                                <button .sv-btn__delete>
+                      
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+
+                                        <rect .sv-btn__delete-ellipse width="32" height="32" rx="16" transform="translate(4 4)"/>
+                                        <g id="trash" transform="translate(4749 -5037)">
+                                            <path .sv-btn__delete-icon d="M14.641,9.638V17.3H7.629V9.638h7.011M13.326,4H8.944l-.876.94H5V6.819H17.27V4.94H14.2Zm3.067,3.758H5.876V17.3a1.825,1.825,0,0,0,1.753,1.879h7.011A1.825,1.825,0,0,0,16.394,17.3Z" transform="translate(-4740 5045.411)"/>
+                                        </g>  
+                                    </svg> 
+                                    
+                                </button>
+                            
+                            </div>
+                            <div .sv-btn__name>
+                                <span .js-selectfile-name></span>
+                            </div>
+                       </button> 
+                    </div>
+                </div>
+              
+            </section>
+            <section (merge) .sv-content>
+              Second tab content
+            </section>
+            <section (split) .sv-content>
+              Third tab content
+            </section>
+            <section (compress) .sv-content>
+              fourth tab content
+            </section>
+        </tabs>
+    </div>
+</div>

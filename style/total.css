@@ -104,6 +104,7 @@ svg {
     fill: @MAIN_COLOR;
 }
 
+
 .btn.active .btn__circle {
     transition: background-color @DURATIONS linear;
     transform: scale(1);
