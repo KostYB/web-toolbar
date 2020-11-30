@@ -1,4 +1,6 @@
-include "tabs.tis";
+include "carousel.tis";
+//include "tabs.tis";
+
 
 function self.ready() {
     
@@ -62,6 +64,14 @@ function self.ready() {
 
     });
     
+    $(.header).on("focus", ".js-search-input", function() {
+        this.$p(.js-search-wrap).attributes.addClass("focus");
+    });
+    
+    $(.header).on("blur", ".js-search-input", function() {
+        this.$p(.js-search-wrap).attributes.removeClass("focus");
+    });
+    
     
     // tabs serveces start
     
@@ -73,8 +83,8 @@ function self.ready() {
         $(.container).attributes.addClass("content-open services-show");
         $(tabs).current = this.value; 
     })
-                                                         
-                                                      
+        
+                                 
     self.on("click", "[data-service]", function(evt) {
         $(.container).attributes.addClass("content-open");
         var serviceName = this.attributes["data-service"];
@@ -92,6 +102,7 @@ function self.ready() {
         $(tabs).current = serviceName; 
         $(#mob-servises).value = serviceName;
         $(.container).attributes.addClass("services-show");
+        
     });     
     
     //    view.msgbox('sdfsd', serviceName)
@@ -106,19 +117,27 @@ function self.ready() {
         
         if (svContent.attributes.hasClass("active")) {
             selectFileNameElement.text = "";
-//            this.attributes.removeClass("active");
             svContent.attributes.removeClass("active");
+            $(.carousel).state.disabled = true;
+         
+            var items = $$(button.service); 
+            for( var item in items ) {
+                item.state.checked = false;
+            }
+            
         } else {
             var fn = view.selectFile(#open,
             "HTML Files (*.htm,*.html)|*.HTM;*.HTML|All Files (*.*)|*.*" , "html" );
             if( fn ) {
                 var parse = URL.parse(fn);
                 selectFileNameElement.text = parse.name_ext;
-//                this.attributes.addClass("active");
                 svContent.attributes.addClass("active");
+                $(.carousel).state.disabled = false;
             }
         };
     });
     // select file end
+    
+        
 };
     

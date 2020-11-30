@@ -41,6 +41,7 @@
     display: block;
     cursor: pointer;
     margin-bottom: 16dip;
+    text-align: center;
 }
 .service::before {
     content: '';
@@ -113,7 +114,7 @@
 .service__picture {
     position: relative;
     height: 60dip;
-    margin-bottom: 17dip;
+    margin-bottom: 15dip;
 }
 .service__icon {
     display: block;
@@ -125,25 +126,27 @@
 .service__description {
     color: rgba(255,255,255,.9);
     font-size: 16dip;
-    font-weight: 500;
-    line-height: 1;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 
 
 
 .sv {
-    display: none;
     padding-top: 16dip;
     size: *;
     box-sizing: border-box;
+    top: -100%;
+    position: absolute;
 }
 .services-show .services {
     display: none;
 }
 
 .services-show .sv {
-    display: block;
+    top: 0;
+    position: relative;
 }
 
 
@@ -160,7 +163,7 @@ tabs > div.strip {
     width: *;
     flow: horizontal-wrap;
     horizontal-align: center;
-    padding-bottom: 8px;
+    padding-bottom: 16px;
 }
 
 tabs > div.strip > label {
@@ -358,3 +361,121 @@ tabs > [name]:expanded {
     @TRANSITION(transform); 
 }
 
+.sv-arrow {
+    display: block;
+    size: 44dip;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url("../img/arrow.svg");
+    background-size: cover;
+    fill: rgba(255,255,255,.2);
+    margin-top: 69dip;
+}
+.sv-content.active .sv-arrow {
+    fill: @RED_COLOR;
+    @TRANSITION(fill); 
+}
+
+
+.carousel__icon {
+    fill: rgba(255,255,255,0.8);
+}
+
+.icon-word {
+    vertical-align: middle;
+    display: inline-block;
+    size: 46dip;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url("../img/word.svg");
+    background-size: cover;
+}
+
+
+/* carusel start */
+
+div.carousel {
+    aspect: Carousel url(../script/carousel.tis);
+    flow: horizontal;
+    padding-top: 6dip;
+}
+
+div.carousel > .button { 
+    height: 170dip; 
+    width: 40dip; 
+    behavior: button; 
+    position: relative;
+    cursor: pointer;
+}
+
+div.carousel > .button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    size: 24dip;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    fill: rgba(255,255,255,.6);
+    background-image: url("../img/arrow-prev.svg"); 
+}
+
+div.carousel > .button.prev::before { 
+    background-image: url("../img/arrow-prev.svg"); 
+}
+div.carousel > .button.next::before { 
+    background-image: url("../img/arrow-next.svg"); 
+}
+
+div.carousel > .button.prev::before:disabled,
+div.carousel > .button.next::before:disabled { 
+    fill: rgba(0,0,0,.6);
+}
+
+div.carousel > widget.list {
+  flow: horizontal;
+  size: 504dip 170dip; 
+  overflow: hidden;
+}
+div.carousel > widget.list > div.box { 
+    size: 168dip 170dip; 
+    padding: 0 4dip;
+    box-sizing: border-box;
+    pointer-events: all;
+}
+
+
+div.carousel:disabled .service::after {
+    background: rgba(0,0,0,.1)
+}
+div.carousel:disabled .service__picture {
+    opacity: 1;
+}
+    
+div.carousel:disabled .carousel__icon {
+   fill: rgba(255,255,255,0.1);
+}
+
+div.carousel:disabled .carousel__icon {
+   fill: rgba(255,255,255,0.1);
+}
+
+div.carousel .service:checked::after {
+    background-color: #46423A;
+}
+div.carousel .service:checked .service__picture {
+    opacity: 1;
+}
+div.carousel .service:checked::after {
+    border-color: #D0A030;
+}
+div.carousel .service:checked::after .carousel__icon {
+    fill: rgba(255,255,255,.9);
+}
+div.carousel .service:checked::after .service__description {
+    color: #fff;
+}
+/* carusel end */

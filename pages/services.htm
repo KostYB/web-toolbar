@@ -75,7 +75,7 @@
 
 <div .sv>
    
-    <div sv__wrap>
+    <div .sv__wrap>
         <tabs>
             <div .strip>
               <label data-service=convert>
@@ -119,8 +119,72 @@
                             </div>
                        </button> 
                     </div>
+                    <div .sv-arrow></div>
+<!--     carousel start         -->
+                    <div class="carousel" disabled>
+                        <widget class="button prev" />
+                        <widget class="list">
+                          <div class="box">
+                              <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>PDF to <br> Word</div>
+                              </button>
+                          </div>
+                          <div class="box">
+                              <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>PDF to <br> Excel</div>
+                              </button>
+                          </div>
+                          <div class="box">
+                             <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>PDF to <br> PowerPoint</div>
+                              </button>
+                          </div>
+                          <div class="box">
+                              <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>PDF to <br> JPEG</div>
+                              </button>
+                          </div>
+                          <div class="box">
+                              <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>PDF to <br> PDF</div>
+                              </button>
+                          </div>
+                          <div class="box">
+                              <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>Any File to <br> PDF</div>
+                              </button>
+                          </div>
+                        </widget>
+                        <widget class="button next" />
+                  </div>
+                  
+<!--     carousel end         -->
+               
                 </div>
-              
             </section>
             <section (merge) .sv-content>
               Second tab content
@@ -133,4 +197,5 @@
             </section>
         </tabs>
     </div>
+
 </div>

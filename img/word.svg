@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.001 45.998">
+
+  <g transform="translate(-1436 -347.001)">
+    <path class="cls-2" d="M7419-873h-35a2,2,0,0,1-2-2v-6h3v5h33v-33l-7-7h-26v6h-3v-7a2,2,0,0,1,2-2h28l9,9v35A2,2,0,0,1,7419-873Z" transform="translate(-5939 1266.001)"/>
+    <g fill="#333" stroke-width="3" stroke="rgba(255,255,255,.1)" transform="translate(1436 359)">
+      <rect class="cls-1" x="1.5" y="1.5" width="20" height="20" rx="0.5"/>
+    </g>
+    <g class="cls-4" transform="translate(1462 364)">
+      <g transform="translate(-1372 -363)">
+        <rect class="cls-2" width="14" height="2" rx="1" transform="translate(1372 363)"/>
+      </g>
+      <g transform="translate(-1372 -358)">
+        <rect class="cls-2" width="14" height="2" rx="1" transform="translate(1372 363)"/>
+      </g>
+      <g transform="translate(-1372 -353)">
+        <rect class="cls-2" width="14" height="2" rx="1" transform="translate(1372 363)"/>
+      </g>
+    </g>
+  </g>
+</svg>

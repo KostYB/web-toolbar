@@ -1,0 +1,47 @@
+function Carousel() {
+
+  var me = this;
+
+  var prev = this.$(:root>.prev);
+  var next = this.$(:root>.next);
+  var list = this.$(:root>.list);
+  
+  var listWidth = 0;
+  var listHeight = 0;
+  var pages = 0;
+  var pageNo = 0;
+
+  var listContentWidth = 0;
+    
+  function checkScrollState() {
+    
+    var sx = list.scroll(#left);
+    pageNo = (sx + listWidth - 1) / listWidth;
+    
+    prev.state.disabled = pageNo == 0;
+    next.state.disabled = pageNo == pages - 1;
+  }
+  
+  list.onSize = function() {
+    (listWidth,listHeight) = this.box(#dimension);
+    listContentWidth = this.box(#width,#content);
+    stdout.println(listWidth,listHeight,listContentWidth);
+    checkScrollState();
+  }
+  
+  list.on("animationend", checkScrollState);
+  
+  next << event click() {
+    var sp = list.scroll(#left);
+    list.scrollTo(sp + listWidth,0,true);
+    checkScrollState();
+  }
+  prev << event click() {
+    var sp = list.scroll(#left);
+    list.scrollTo(sp - listWidth,0,true);
+    checkScrollState();
+  }
+  
+  this.post(::list.onSize());
+
+}

@@ -41,6 +41,13 @@
     position: relative;
     size: 279dip 28dip;
 }
+.search__wrap {
+    padding: 0 30dip 0 8dip;
+}
+.search__wrap.focus {
+    background: rgba(255,255,255,.2);
+}
+
 .search__input {
     display: block;
     size: * 28dip;
@@ -49,15 +56,10 @@
     color: rgba(255,255,255,.8);
     font-size: 14dip;
     line-height: 28dip;
-    padding: 0 40dip 0 8dip;
-    caret-color: #fff;
+    padding: 0;
+    text-selection-caret-color: #fff;
     box-sizing: border-box;
 }
-
-.search__input:focus {
-    background: rgba(255,255,255,.2);
-}
-
 .search__btn {
     position: absolute;
     top: 0;
