@@ -1,0 +1,9 @@
+@const MAIN_COLOR: #121212;
+@const BTN_COLOR: rgba(255,255,255,0.6);
+@const RED_COLOR: #D73E3E;
+@const DURATIONS: 250ms;
+@const FONT: Roboto, sans-serif;
+@mixin TRANSITION(property) {
+    transition: property @DURATIONS linear;
+};
+

@@ -1,0 +1,201 @@
+<div .services>
+    <div .services__title>
+        <span>Select PDF Service</span>
+    </div>
+    <div .services__list>
+        <div .services__item>
+        
+<!-- <div .service add disabled or checked   -->
+           
+            <div .service data-service="convert">
+                <span .service__line></span>
+                <div .service__picture>
+                    <svg .service__icon xmlns="http://www.w3.org/2000/svg" width="50" height="56" viewBox="0 0 50 56">
+                        <g transform="translate(-56 -26)">
+                            <g  transform="translate(-625.001 -167)">
+                                <path d="M6659-819h-17l3-3h13v-25l-6-7h-20v19l-3-3v-17a2,2,0,0,1,2-2h22l8,9v27A2,2,0,0,1,6659-819Z" transform="translate(-5930.001 1061.001)" fill="rgba(255,255,255,0.8)"/>
+                                <path d="M6637-819h-9a2,2,0,0,1-2-2v-34a2,2,0,0,1,2-2h22l5.334,6h-3.761L6649-854h-20v32h8v3Z" transform="translate(-5943 1050.001)" fill="rgba(255,255,255,0.8)"/>
+                                <path .service__animation d="M6635-855h-18v-3h18v-8l9,9-9,9Z" transform="translate(-5936 1097)" fill="rgba(255,255,255,0.8)"/>
+                            </g>
+                        </g>
+                    </svg>
+
+                </div>
+                <div .service__description>Convert</div>
+            </div>
+        </div>
+        <div .services__item>
+            <div .service data-service="merge">
+                <span .service__line></span>
+                <div .service__picture>
+                    <svg .service__icon xmlns="http://www.w3.org/2000/svg" width="59" height="55.001" viewBox="0 0 59 55.001">
+                        <g transform="translate(-849 -193)">
+                            <path d="M6656-821h-21v-3h20v-25l-6-7h-20v23h-3v-24a2,2,0,0,1,2-2h22l8,9v27A2,2,0,0,1,6656-821Z" transform="translate(-5761.999 1063)" fill="rgba(255,255,255,0.8)"/>
+                            <path d="M6657-821h-6v-3h5v-25l-6-7h-20v4h-3v-5a2,2,0,0,1,2-2h22l8,9v27A2,2,0,0,1,6657-821Z" transform="translate(-5750.999 1051.999)" fill="rgba(255,255,255,0.8)"/>
+                            <path .service__animation d="M6625-847v-8h-8v-3h8v-8h3v8h8v3h-8v8Z" transform="translate(-5768 1095)" fill="rgba(255,255,255,0.8)"/>
+                        </g>
+                    </svg>
+
+                </div>
+                <p .service__description>Merge</p>
+            </div>
+        </div>
+        <div .services__item>
+            <div .service data-service="split">
+                <span .service__line></span>
+                <div .service__picture>
+                    <svg .service__icon xmlns="http://www.w3.org/2000/svg" width="62" height="46" viewBox="0 0 62 46">
+                        <g transform="translate(-1016 -195)">
+                            <path d="M6657-814h-35a2,2,0,0,1-2-2v-15h3v14h33v-14h3v15A2,2,0,0,1,6657-814Zm-34-28h-3v-16a2,2,0,0,1,2-2h35a2,2,0,0,1,2,2v16h-3v-15h-33v15Z" transform="translate(-5592 1055)" fill="rgba(255,255,255,0.8)"/>
+                            <rect .service__animation width="62" height="3" transform="translate(1016 217)" fill="rgba(255,255,255,0.8)"/>
+                        </g>
+                    </svg>
+
+                </div>
+                <p .service__description>Split</p>
+            </div>
+        </div>
+        <div .services__item>
+            <div .service data-service="compress">
+                <span .service__line></span>
+                <div .service__picture>
+                    <svg .service__icon xmlns="http://www.w3.org/2000/svg" width="49.001" height="48.763" viewBox="0 0 49.001 48.763">
+                        <g transform="translate(-1204 -190.237)">
+                            <path d="M6644-817.763v-3h19v-35.117l-11.622,11.622,5.658,5.656-13.081-.353-.355-13.082,5.656,5.658,11.385-11.384H6626V-839h-3v-19.763a2,2,0,0,1,2-2h39a2,2,0,0,1,2,2v39a2,2,0,0,1-2,2Z" transform="translate(-5413 1051)" fill="rgba(255,255,255,0.8)"/>
+                            <rect .service__animation width="22" height="22" rx="2" transform="translate(1204 217)" fill="rgba(255,255,255,0.8)"/>
+                        </g>
+                    </svg>
+                </div>
+                <p .service__description>Compress</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div .sv>
+   
+    <div .sv__wrap>
+        <tabs>
+            <div .strip>
+              <label data-service=convert>
+                  <span>Convert</span>
+              </label>
+              <label data-service=merge >
+                  <span>Merge</span>
+              </label>
+              <label data-service=split >
+                  <span>Split</span>
+              </label>
+              <label data-service=compress >
+                  <span>Compress</span>
+                  
+              </label>
+            </div>
+            <section (convert) expanded .sv-content .convert>
+                <div .sv-content__wrap>
+                    <div .sv-btn-wrap>
+                       <button .sv-btn data-selectfile>
+                            <div .sv-btn__content>
+                                <div .sv-btn__delete .sv-btn__icon></div>
+                                <div .sv-btn__plus .sv-btn__icon></div>
+                                <div .sv-btn__link .sv-btn__icon></div>
+                                
+                                <button .sv-btn__delete>
+                      
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+
+                                        <rect .sv-btn__delete-ellipse width="32" height="32" rx="16" transform="translate(4 4)"/>
+                                        <g id="trash" transform="translate(4749 -5037)">
+                                            <path .sv-btn__delete-icon d="M14.641,9.638V17.3H7.629V9.638h7.011M13.326,4H8.944l-.876.94H5V6.819H17.27V4.94H14.2Zm3.067,3.758H5.876V17.3a1.825,1.825,0,0,0,1.753,1.879h7.011A1.825,1.825,0,0,0,16.394,17.3Z" transform="translate(-4740 5045.411)"/>
+                                        </g>  
+                                    </svg> 
+                                    
+                                </button>
+                            
+                            </div>
+                            <div .sv-btn__name>
+                                <span .js-selectfile-name></span>
+                            </div>
+                       </button> 
+                    </div>
+                    <div .sv-arrow></div>
+<!--     carousel start         -->
+                    <div class="carousel" disabled>
+                        <widget class="button prev" />
+                        <widget class="list">
+                          <div class="box">
+                              <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>PDF to <br> Word</div>
+                              </button>
+                          </div>
+                          <div class="box">
+                              <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>PDF to <br> Excel</div>
+                              </button>
+                          </div>
+                          <div class="box">
+                             <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>PDF to <br> PowerPoint</div>
+                              </button>
+                          </div>
+                          <div class="box">
+                              <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>PDF to <br> JPEG</div>
+                              </button>
+                          </div>
+                          <div class="box">
+                              <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>PDF to <br> PDF</div>
+                              </button>
+                          </div>
+                          <div class="box">
+                              <button|radio(carousel-service) .service>
+                                  <span .service__line></span>
+                                  <div .service__picture>
+                                      <div .carousel__icon .icon-word></div>
+                                  </div>
+                                  <div .service__description>Any File to <br> PDF</div>
+                              </button>
+                          </div>
+                        </widget>
+                        <widget class="button next" />
+                  </div>
+                  
+<!--     carousel end         -->
+               
+                </div>
+            </section>
+            <section (merge) .sv-content>
+              Second tab content
+            </section>
+            <section (split) .sv-content>
+              Third tab content
+            </section>
+            <section (compress) .sv-content>
+              fourth tab content
+            </section>
+        </tabs>
+    </div>
+
+</div>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46.001 45.998">
+ 
+  <g id="Сгруппировать_19899" data-name="Сгруппировать 19899" transform="translate(-1349 -347.001)">
+    <path id="Вычитание_330" data-name="Вычитание 330" class="cls-2" d="M7419-873h-35a2,2,0,0,1-2-2v-6h3v5h33v-33l-7-7h-26v6h-3v-7a2,2,0,0,1,2-2h28l9,9v35A2,2,0,0,1,7419-873Z" transform="translate(-6026 1266.001)"/>
+    <g id="Прямоугольник_14429" data-name="Прямоугольник 14429" class="cls-3" transform="translate(1349 359)">
+      <rect class="cls-6" width="23" height="23" rx="2"/>
+      <rect class="cls-1" x="1.5" y="1.5" width="20" height="20" rx="0.5"/>
+    </g>
+    <g id="Повторить_сетку_245" data-name="Повторить сетку 245" class="cls-4" transform="translate(1375 364)">
+      <g transform="translate(-1372 -363)">
+        <rect id="Прямоугольник_14428" data-name="Прямоугольник 14428" class="cls-2" width="6" height="2" rx="1" transform="translate(1372 363)"/>
+      </g>
+      <g transform="translate(-1364 -363)">
+        <rect id="Прямоугольник_14428-2" data-name="Прямоугольник 14428" class="cls-2" width="6" height="2" rx="1" transform="translate(1372 363)"/>
+      </g>
+      <g transform="translate(-1372 -358)">
+        <rect id="Прямоугольник_14428-3" data-name="Прямоугольник 14428" class="cls-2" width="6" height="2" rx="1" transform="translate(1372 363)"/>
+      </g>
+      <g transform="translate(-1364 -358)">
+        <rect id="Прямоугольник_14428-4" data-name="Прямоугольник 14428" class="cls-2" width="6" height="2" rx="1" transform="translate(1372 363)"/>
+      </g>
+      <g transform="translate(-1372 -353)">
+        <rect id="Прямоугольник_14428-5" data-name="Прямоугольник 14428" class="cls-2" width="6" height="2" rx="1" transform="translate(1372 363)"/>
+      </g>
+      <g transform="translate(-1364 -353)">
+        <rect id="Прямоугольник_14428-6" data-name="Прямоугольник 14428" class="cls-2" width="6" height="2" rx="1" transform="translate(1372 363)"/>
+      </g>
+    </g>
+    <text id="X" class="cls-5" transform="translate(1361 375)"><tspan x="-4.564" y="0">X</tspan></text>
+  </g>
+</svg>
