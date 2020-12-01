@@ -394,13 +394,13 @@ tabs > [name]:expanded {
 
 /* carusel start */
 
-div.carousel {
+.carousel {
     aspect: Carousel url(../script/carousel.tis);
     flow: horizontal;
     padding-top: 6dip;
 }
 
-div.carousel > .button { 
+.carousel > .button {  
     height: 170dip; 
     width: 40dip; 
     behavior: button; 
@@ -408,7 +408,7 @@ div.carousel > .button {
     cursor: pointer;
 }
 
-div.carousel > .button::before {
+.carousel > .button::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -423,24 +423,24 @@ div.carousel > .button::before {
     background-image: url("../img/arrow-prev.svg"); 
 }
 
-div.carousel > .button.prev::before { 
+.carousel > .button.prev::before { 
     background-image: url("../img/arrow-prev.svg"); 
 }
-div.carousel > .button.next::before { 
+.carousel > .button.next::before { 
     background-image: url("../img/arrow-next.svg"); 
 }
 
-div.carousel > .button.prev::before:disabled,
-div.carousel > .button.next::before:disabled { 
+.carousel > .button.prev::before:disabled,
+.carousel > .button.next::before:disabled { 
     fill: rgba(0,0,0,.6);
 }
 
-div.carousel > widget.list {
+.carousel > widget.list {
   flow: horizontal;
   size: 504dip 170dip; 
   overflow: hidden;
 }
-div.carousel > widget.list > div.box { 
+.carousel > widget.list > div.box { 
     size: 168dip 170dip; 
     padding: 0 4dip;
     box-sizing: border-box;
@@ -448,34 +448,34 @@ div.carousel > widget.list > div.box {
 }
 
 
-div.carousel:disabled .service::after {
+.carousel:disabled .service::after {
     background: rgba(0,0,0,.1)
 }
-div.carousel:disabled .service__picture {
+.carousel:disabled .service__picture {
     opacity: 1;
 }
     
-div.carousel:disabled .carousel__icon {
+.carousel:disabled .carousel__icon {
    fill: rgba(255,255,255,0.1);
 }
 
-div.carousel:disabled .carousel__icon {
+.carousel:disabled .carousel__icon {
    fill: rgba(255,255,255,0.1);
 }
 
-div.carousel .service:checked::after {
+.carousel .service:checked::after {
     background-color: #46423A;
 }
-div.carousel .service:checked .service__picture {
+.carousel .service:checked .service__picture {
     opacity: 1;
 }
-div.carousel .service:checked::after {
+.carousel .service:checked::after {
     border-color: #D0A030;
 }
-div.carousel .service:checked::after .carousel__icon {
+.carousel .service:checked::after .carousel__icon {
     fill: rgba(255,255,255,.9);
 }
-div.carousel .service:checked::after .service__description {
+.carousel .service:checked::after .service__description {
     color: #fff;
 }
 /* carusel end */

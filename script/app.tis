@@ -19,7 +19,6 @@ function self.ready() {
       var t = "large";
         
       if( w < 1000 ) t = "small";
-//      else if( w < 1000 ) t = "medium";
         
       if( t != wsFactor ) {
         wsFactor = t;
@@ -28,6 +27,14 @@ function self.ready() {
       
     });
 
+    function menuClose() {
+        $(.container).attributes.toggleClass("menu-open");
+        $([data-name="menu"]).attributes.toggleClass("active");
+    }
+    
+    $(.backdrop).on("click", function() {
+        menuClose();
+    });
     
     $(.header).on("focus", "select", function() { 
         this.attributes.addClass("select-open");
@@ -53,6 +60,11 @@ function self.ready() {
                 }
                 case "toggleserch":  {
                     $(.container.content-open).attributes.toggleClass("mob-serch-open");
+                    this.attributes.toggleClass("active");
+                    break;
+                }
+                case "menu":  {
+                    $(.container).attributes.toggleClass("menu-open");
                     this.attributes.toggleClass("active");
                     break;
                 }
@@ -89,7 +101,7 @@ function self.ready() {
         $(.container).attributes.addClass("content-open");
         var serviceName = this.attributes["data-service"];
         
-        var items = $$(.header .btn[data-service]); 
+        var items = $$(.header .btn); 
         
         for( var item in items ) {
             item.attributes.removeClass("active");
@@ -102,10 +114,9 @@ function self.ready() {
         $(tabs).current = serviceName; 
         $(#mob-servises).value = serviceName;
         $(.container).attributes.addClass("services-show");
-        
+        $(.container).attributes.removeClass("menu-open");
     });     
     
-    //    view.msgbox('sdfsd', serviceName)
 
     // tabs serveces end
         
@@ -133,6 +144,7 @@ function self.ready() {
                 selectFileNameElement.text = parse.name_ext;
                 svContent.attributes.addClass("active");
                 $(.carousel).state.disabled = false;
+                                                
             }
         };
     });
