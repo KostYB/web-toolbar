@@ -55,13 +55,53 @@
     .mob-serch-open .header-search {
         opacity: 1;
         transition: opacity @DURATIONS linear;
-        z-index: 0;
+        z-index: 10;
     }
     .btn {
         margin: 0;
     }
+    .content {
+        overflow-y: auto;
+        max-height: 100vh;
+        box-sizing: border-box;
+    }
+    .sv {
+        padding-top: 40px;
+        padding-bottom: 40dip;
+        opacity: 0;
+    }
     
-
+    .services-show .sv {
+        opacity: 1;
+    }
+    .sv-content__wrap {
+        flow: vertical;
+    }
+    .sv-arrow {
+        margin-top: 10dip;
+        margin-bottom: 10dip;
+        transform: rotate(90deg);
+    }
+    .carousel {
+        flow: vertical;
+    }
+    .carousel > .button {
+        display: none;
+    }
+    .carousel > widget.list {
+        size: auto;
+        max-width: 320dip;
+        flow: horizontal-wrap; 
+        horizontal-align: center;
+        margin: 0 auto;
+    }
+    .carousel > widget.list > div.box { 
+        size: 160dip 170dip; 
+        margin: auto;
+    }
+    .carousel .service {
+        width: 152dip;
+    }
 }
 
 /*

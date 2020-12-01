@@ -19,7 +19,6 @@ function self.ready() {
       var t = "large";
         
       if( w < 1000 ) t = "small";
-//      else if( w < 1000 ) t = "medium";
         
       if( t != wsFactor ) {
         wsFactor = t;
@@ -118,7 +117,6 @@ function self.ready() {
         $(.container).attributes.removeClass("menu-open");
     });     
     
-    //    view.msgbox('sdfsd', serviceName)
 
     // tabs serveces end
         
@@ -146,6 +144,7 @@ function self.ready() {
                 selectFileNameElement.text = parse.name_ext;
                 svContent.attributes.addClass("active");
                 $(.carousel).state.disabled = false;
+                                                
             }
         };
     });
